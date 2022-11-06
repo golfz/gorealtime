@@ -60,6 +60,7 @@ func Subscribe(wg *sync.WaitGroup, ctx context.Context, amqpEndpoint string, sco
 			if isMatchWithArgs(payload, filterArgs) {
 				returnDataCh <- b
 			}
+
 			d.Ack(false)
 		}
 	}()
